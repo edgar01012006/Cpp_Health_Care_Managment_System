@@ -8,7 +8,7 @@
 
 class System {
     public:
-        System(); // maybe default
+        System() = default;
         System(const System& other) = delete;
         System(System&& other) = delete;
         ~System();
@@ -18,6 +18,7 @@ class System {
         void remove_patient(size_t pid);
         Doctor* find_doctor(size_t did) const;
         Patient* find_patient(size_t pid) const;
+        void assign_patient_to_doctor(size_t pid, size_t did);
         // void display(); // dont know its use for now
     private:
         std::vector<Doctor*> m_doctors;
