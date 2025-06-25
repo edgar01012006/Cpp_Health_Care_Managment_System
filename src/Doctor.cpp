@@ -7,6 +7,15 @@ Doctor::Doctor(const std::string& name, const std::string specz, size_t yoe, con
     //empty
 }
 
+std::ostream& operator<<(std::ostream& out, const Doctor& src) {
+    out << "Doctor ID: " << src.m_did << std::endl;
+    out << "Name: " << src.m_name << std::endl;
+    out << "Specialization: " << src.m_specz << std::endl;
+    out << "Years of experience: " << src.m_yoe << std::endl;
+    out << "Contact: " << src.m_contact << std::endl;
+    return out;
+}
+
 void Doctor::assign_patient(size_t pid) {
     m_pids.push_back(pid);
 }
@@ -28,7 +37,7 @@ Medical_Case Doctor::give_medical_case(size_t pid) {
             return med_case;
         }
     }
-    return med_case; // later might find better implementation to throw error
+    return med_case;
 }
 
 size_t Doctor::get_did() const {
