@@ -47,3 +47,19 @@ void Patient::add_Medical_Case(const Medical_Case& med_case) {
 size_t Patient::get_pid() const {
     return m_pid;
 }
+
+void Patient::print_medical_history() const {
+    for (size_t i = 0; i < m_med_cases.size(); ++i) {
+        std::cout << m_med_cases[i] << std::endl;
+    }
+}
+
+void Patient::print_medical_history(std::ostream& out) const {
+    for (size_t i = 0; i < m_med_cases.size(); ++i) {
+        out << m_med_cases[i] << std::endl;
+    }
+}
+
+ std::string Patient::get_pname() const {
+    return m_name;
+ }

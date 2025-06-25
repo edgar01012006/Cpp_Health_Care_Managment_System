@@ -21,7 +21,7 @@ void Doctor::assign_patient(size_t pid) {
 }
 
 void Doctor::unassign_patient(size_t pid) {
-    for (int i = 0; i < m_pids.size(); ++i) {
+    for (size_t i = 0; i < m_pids.size(); ++i) {
         if (pid == m_pids[i]) {
             m_pids.erase(m_pids.begin() + i);
             return;
@@ -31,7 +31,7 @@ void Doctor::unassign_patient(size_t pid) {
 
 Medical_Case Doctor::give_medical_case(size_t pid) {
     Medical_Case med_case;
-    for (int i = 0; i < m_pids.size(); ++i) {
+    for (size_t i = 0; i < m_pids.size(); ++i) {
         if (pid == m_pids[i]) {
             std::cin >> med_case;
             return med_case;
