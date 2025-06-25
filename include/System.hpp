@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <ostream>
 #include "Doctor.hpp"
 #include "Patient.hpp"
 
@@ -12,6 +13,14 @@ class System {
         System(const System& other) = delete;
         System(System&& other) = delete;
         ~System();
+        friend std::ostream& operator<<(std::ostream& out, const System& src);
+        bool is_doctor(size_t did) const;
+        bool is_patient(size_t pid) const;
+        bool is_patient_of_doctor(size_t pid, size_t did) const;
+        /* The next 3 find functions assume that passed argument(s) are valid */
+        size_t find_doctor_index(size_t pid) const;
+        size_t find_patient_index(size_t pid) const;
+        size_t find_patient_of_doctor_index(size_t pid, size_t did) const;
         void add_doctor(const std::string& name, const std::string& specz, size_t yoe, const std::string& contact);
         void remove_doctor(size_t did);
         void add_patient(const std::string& name, Gender gender, const std::string& dob, const std::string& contact, Condition condition);
@@ -19,7 +28,7 @@ class System {
         Doctor* find_doctor(size_t did) const;
         Patient* find_patient(size_t pid) const;
         void assign_patient_to_doctor(size_t pid, size_t did);
-        // void display(); // dont know its use for now
+        void give_medical_case_to_patient(size_t pid, size_t did);
     private:
         std::vector<Doctor*> m_doctors;
         std::vector<Patient*> m_patients;

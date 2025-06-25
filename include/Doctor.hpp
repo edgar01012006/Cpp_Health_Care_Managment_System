@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <ostream>
 #include "Medical_Case.hpp"
 
 class Doctor {
@@ -11,6 +12,7 @@ class Doctor {
         Doctor(const Doctor& other) = delete;
         Doctor(Doctor&& other) = delete;
         ~Doctor() = default;
+        friend std::ostream& operator<<(std::ostream& out, const Doctor& src);
         void assign_patient(size_t pid);
         void unassign_patient(size_t pid);
         Medical_Case give_medical_case(size_t pid);
