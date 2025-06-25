@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 #include <ostream>
+#include <ctime>
+#include <fstream>
 #include "Doctor.hpp"
 #include "Patient.hpp"
 
@@ -29,7 +31,9 @@ class System {
         Patient* find_patient(size_t pid) const;
         void assign_patient_to_doctor(size_t pid, size_t did);
         void give_medical_case_to_patient(size_t pid, size_t did);
+        void generate_report(size_t pid);
     private:
+        void save_report(size_t pid);
         std::vector<Doctor*> m_doctors;
         std::vector<Patient*> m_patients;
 };

@@ -28,6 +28,9 @@ class Patient {
         friend std::ostream& operator<<(std::ostream& out, const Patient& src);
         void add_Medical_Case(const Medical_Case& med_case);
         size_t get_pid() const;
+        void print_medical_history() const;
+        void print_medical_history(std::ostream& out) const;
+        std::string get_pname() const;
     private:
         static size_t m_pid_count;
         size_t m_pid; // patient id
