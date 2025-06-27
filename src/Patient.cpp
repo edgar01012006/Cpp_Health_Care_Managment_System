@@ -60,6 +60,10 @@ void Patient::print_medical_history(std::ostream& out) const {
     }
 }
 
- std::string Patient::get_pname() const {
+std::string Patient::get_pname() const {
     return m_name;
- }
+}
+
+size_t Patient::get_med_cases_count() const {
+    return m_med_cases.size();
+}

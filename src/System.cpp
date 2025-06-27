@@ -169,3 +169,10 @@ void System::save_report(size_t pid) {
     file << "* Medical History *" << std::endl;
     find_patient(pid)->print_medical_history(file);
 }
+
+size_t System::doctors_count() const {
+    return m_doctors.size();
+}
+size_t System::patients_count() const {
+    return m_patients.size();
+}
