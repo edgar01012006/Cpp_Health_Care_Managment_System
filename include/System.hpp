@@ -32,6 +32,9 @@ class System {
         void assign_patient_to_doctor(size_t pid, size_t did);
         void give_medical_case_to_patient(size_t pid, size_t did);
         void generate_report(size_t pid);
+        //tests
+        size_t doctors_count() const;
+        size_t patients_count() const;
     private:
         void save_report(size_t pid);
         std::vector<Doctor*> m_doctors;

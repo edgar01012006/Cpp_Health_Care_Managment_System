@@ -31,6 +31,7 @@ class Patient {
         void print_medical_history() const;
         void print_medical_history(std::ostream& out) const;
         std::string get_pname() const;
+        size_t get_med_cases_count() const;
     private:
         static size_t m_pid_count;
         size_t m_pid; // patient id
