@@ -38,4 +38,13 @@ TEST(SystemTest, AddMedicalCaseForPatient) {
     EXPECT_EQ(system.find_patient(4)->get_med_cases_count(), 1);
 }
 
+TEST(SystemTest, RemovePatientsFromDoctor) {
+    System system;
+    system.add_patient("Anna", Gender::FEMALE, "03/08/1995", "Anna@gmail.com", Condition::RECOVERING);
+    system.add_doctor("Michael", "Neurology", 20, "michael@hospital.com");
+    system.assign_patient_to_doctor(5, 5); // Anna->Michael
+    system.remove_patient(5);
+    EXPECT_TRUE(system.is_doctor(5));
+    EXPECT_FALSE(system.is_patient(5));
+}
 
