@@ -11,13 +11,14 @@ A console-based healthcare management system built with C++ that allows you to m
 
 ## 📁 Project Structure
 
-include/ # Header files
-src/ # Source files
-test/ # Unit tests
+- include/ # Header files
+- src/ # Source files
+- test/ # Unit tests
 
 
 ## ⚙️ Build and Run
 
+```
 git clone https://github.com/edgar01012006/Cpp_Health_Care_Managment_System.git
 cd Cpp_Health_Care_Managment_System
 cd build
